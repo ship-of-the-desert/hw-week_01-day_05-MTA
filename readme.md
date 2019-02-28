@@ -37,3 +37,7 @@ planTrip("N", "Times Square", "6", "33rd"); // This is only a suggested function
 - Don't worry about prompting the user for input. Hard code some values to get it working. You can use `prompt()` later, if you want, to make it more interactive.
 - Consider drawing the lines by sketching out the subway lines and their stops and intersection.
 - The key to the lab is finding the index positions of each stop. (hint: `.indexOf()` and `.includes()`)
+
+
+## Reminder
+Remember to submit a pull request to our class repository with your work by 9 am Sunday morning! Need a reminder on how to submit? Check out the instructions on how to submit homework in our class Wiki ([located on our class Github](https://github.com/ship-of-the-desert/homework_submission_steps)) if you need a reminder.
