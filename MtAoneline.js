@@ -22,4 +22,3 @@ else {
 console.log("You must travel through the following stops on the N line " + jor  + "total spet " + tj );
 }
 planTrip("8th","23rd");
-gi
