@@ -114,14 +114,14 @@ function printTrip (trip) {
 
     if (oneLine==false) {
 
-        for (var i= 0; i < trip.indexOf('Union Square'); i++) {
+        for (var i= 1; i <= trip.indexOf('Union Square'); i++) {
             journeyPartOne += trip[i];
 
-            if (i != trip.indexOf('Union Square'-1)) {
+            if (i != trip.indexOf('Union Square')) {
                 journeyPartOne +=  ', ';
             }
         }
-        console.log('You must travel through the following stops on the line: ' + journeyPartOne + ', Union Square.');
+        console.log('You must travel through the following stops on the line: ' + journeyPartOne + '.');
         console.log('Change at Union Square.');
 
         for (var x= trip.indexOf('Union Square')+1; x < trip.length; x++) {
