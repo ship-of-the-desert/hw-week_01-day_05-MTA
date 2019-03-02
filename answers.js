@@ -8,20 +8,23 @@ var sLine= [ 'Grand Central', '33rd', '28th', '23rd', 'Union Square', 'Astor Pla
 //second and a half step: print change on union cross
 //third step: find number of stops between arrival and destination
 //fourth step: display all that into console
-//fifth step: hello world celebration
 
 var stopCount = [];
+//create function that measure the length of stop count array
 function countStop()
 {
   return stopCount.length-4 + " stops in total.";
 }
+//the main function of the program
 function trip()
 {
     console.log("You must travel through the following stops on the N Line:")
     console.log(nLine.slice(0, 5));
+//for loop to count the elements in the array and pushes them to the stop count array
     for(var i = 0; i < nLine.length; i++)
     {
       var count = stopCount.push(nLine[i]);
+//checks for the union intersection and enters the next array
       if(nLine[i] == 'Union Square')
       {
         console.log("Change at Union Square");
@@ -36,4 +39,5 @@ function trip()
     }
     console.log(countStop());
 }
+//calls the main function
 trip();
