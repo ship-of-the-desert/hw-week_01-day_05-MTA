@@ -73,7 +73,7 @@ while ( branch_line[b]!= Final_stop)
     b ++;
 }
 console.log("Your journey continues through the following stops: "+stops_branch_line+ Final_stop+ ".");
-console.log(`${b+j+1} stops in total.`);
+console.log(`${b+j+1} stops in total......`);
 }
 
 }
