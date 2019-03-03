@@ -80,21 +80,48 @@ function planTrip(startStation, endStation) {
     // Get the intersecting  station of the end point
     // from the intersection object
     intersection = intersection[endLine.name];
+    if (startLine === endLine) {
+        if (startLine.stations.indexOf(startStation) > startLine.stations.indexOf(intersection)) {
+            for (var i = startLine.stations.indexOf(startStation); i > startLine.stations.indexOf(intersection); i--) {
+                result += startLine.stations[i] + ' ' + ' --> ';
+            }
+        } else {
+            // Concatenate the stations from the startStation to 
+            // the intersection
+            for (var i = startLine.stations.indexOf(startStation); i < startLine.stations.indexOf(intersection); i++) {
+                result += startLine.stations[i] + ' ' + ' --> ';
+            }
+        }
 
-    // Concatenate the stations from the startStation to 
-    // the intersection
-    for (var i = startLine.stations.indexOf(startStation); i < startLine.stations.indexOf(intersection); i++) {
-        result += startLine.stations[i] + ' ' + ' --> ';
-    }
+    } else {
+        if (startLine.stations.indexOf(startStation) >= startLine.stations.indexOf(intersection)) {
+            for (var i = startLine.stations.indexOf(startStation); i >= startLine.stations.indexOf(intersection); i--) {
+                result += startLine.stations[i] + ' ' + ' --> ';
+            }
+        } else {
+            // Concatenate the stations from the startStation to 
+            // the intersection
+            for (var i = startLine.stations.indexOf(startStation); i < startLine.stations.indexOf(intersection); i++) {
+                result += startLine.stations[i] + ' ' + ' --> ';
+            }
+        }
 
-    // Concatenate the stations from the intersection to
-    // the endStation
-    for (var i = endLine.stations.indexOf(intersection); i < endLine.stations.length; i++) {
-        result += endLine.stations[i] + ' ' + ' --> ';
+
+        if (endLine.stations.indexOf(intersection) >= endLine.stations.indexOf(endStation)) {
+            for (var i = endLine.stations.indexOf(intersection); i >= endLine.stations.indexOf(endStation); i--) {
+                result += endLine.stations[i] + ' ' + ' --> ';
+            }
+        } else {
+            // Concatenate the stations from the startStation to 
+            // the intersection
+            for (var i = endLine.stations.indexOf(endStation); i < endLine.stations.indexOf(intersection); i++) {
+                result += endLine.stations[i] + ' ' + ' --> ';
+            }
+        }
     }
 
     console.log(result);
 }
 
 
-planTrip('8th', 'Astor Place');
+planTrip('Astor Place', '8th');
